@@ -2,7 +2,7 @@
 const input = require("synchro-prompt");
 var t = 0;
 
-while(p != -1){
+while (p != -1) {
   console.log(`\n    Seja bem vindo(a)!:
    --------------------
   | Produto 1 - R$2,98 |    . ------------------------------------ .
@@ -14,38 +14,38 @@ while(p != -1){
   var p = Number(input("Digite uma opcao: "));
   var qntd = 0;
 
-  switch(p){
-    case(1):
+  switch (p) {
+    case (1):
       var qntd = parseInt(input("Digite quantas unidades deseja obter: "));
       t = t + (2.98 * qntd);
       console.log(`\nProduto ${p}  -  Quantidade: ${qntd} \nTotal:  R$ ${t.toFixed(2)}`);
       break;
-    case(2):
+    case (2):
       var qntd = Number(input("Digite quantas unidades deseja obter: "));
       t = t + (4.50 * qntd);
       console.log(`\nProduto ${p}  -  Quantidade: ${qntd} \nTotal:  R$ ${t.toFixed(2)}`);
       break;
-    case(3):
+    case (3):
       var qntd = Number(input("Digite quantas unidades deseja obter: "));
       t = t + (9.98 * qntd);
       console.log(`\nProduto ${p}  -  Quantidade: ${qntd} \nTotal:  R$ ${t.toFixed(2)}`);
       break;
-    case(4):
+    case (4):
       var qntd = Number(input("Digite quantas unidades deseja obter: "));
       t = t + (4.49 * qntd);
       console.log(`\nProduto ${p}  -  Quantidade: ${qntd} \nTotal:  R$ ${t.toFixed(2)}`);
-      break; 
-    case(5):
+      break;
+    case (5):
       var qntd = Number(input("Digite quantas unidades deseja obter: "));
       t = t + (6.87 * qntd);
       console.log(`\nProduto ${p}  -  Quantidade: ${qntd} \nTotal:  R$ ${t.toFixed(2)}`);
       break;
-    case(-1):
+    case (-1):
       console.log("\nVoce escolheu sair. \nAgradecemos a preferencia!");
       break;
     default:
-    console.log("\nAlgo deu errado... \nTente mais uma vez.");
-  }  
+      console.log("\nAlgo deu errado... \nTente mais uma vez.");
+  }
 }
 
 console.log(`\nValor final da compra: R$ ${t.toFixed(2)}\n`);

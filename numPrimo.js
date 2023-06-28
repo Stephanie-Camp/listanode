@@ -2,7 +2,7 @@
 const input = require("synchro-prompt");
 var x = Number(input("Digite um numero: "));
 
-if(x === 1 || x < 1){
+if(x <= 1){
   console.log(`${x} nao e um numero primo`);
 }
 
