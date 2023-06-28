@@ -1,4 +1,4 @@
-//le um numero de 4 digitos e o exibe no console separadamente
+//le um numero de 4 digitos e o exibe no console separadamente 
 const input = require("synchro-prompt");
 var num = Number(input("Digite um numero de 4 digitos, por favor: "));
 
