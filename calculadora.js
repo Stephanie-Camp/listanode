@@ -1,7 +1,7 @@
 const input = require("synchro-prompt");
 let exp = Math.pow(num1, num2);
 
-console.log(`  CALCULADORA 
+console.log(`  CALCULADORA
 | a - Soma
 | b - Subtracao
 | c - Multiplicacao
