@@ -1,4 +1,4 @@
-//numeros primos 
+//numeros primos
 const input = require("synchro-prompt");
 var x = Number(input("Digite um numero: "));
 
