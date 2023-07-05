@@ -9,7 +9,7 @@ var vet = [];
 //adicione valores dentro do vetor
 console.log(`Digite ${x} valores para inserirmos no vetor: \n`);
 for(var i = 0; i < x; i++){
-  v.push((input(v[i] + "\n")));
+  v.push((input(v[i] + `\nPosicao ${i}: `)));
 }
 v.splice(0, 1);
 console.log(`\nSeu vetor: [${v}]`);
@@ -26,4 +26,4 @@ console.log(`Vetor final = [${vet}]`);
 var op = Number(input("\nAperte qualquer tecla caso queira continuar ou aperte  0  para sair. \nDeseja continuar?\n"));
 }while(op != 0);
 
-console.log("\nVoce saiu.")
+console.log("\nVoce escolheu kitar :)");
