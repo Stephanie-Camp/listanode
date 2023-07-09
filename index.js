@@ -25,5 +25,5 @@ for(var i = 0; i < x; i++){
   vetor.push(Number(input(vetor[i])));
 }
 
-vetor.splice(0, 1);
+vetor.splice(0, 1); //apaga o primeiro valor (o primeiro valor apos a `posicao 0`)
 console.log(vetor);
