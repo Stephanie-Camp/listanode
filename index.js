@@ -27,3 +27,6 @@ for(var i = 0; i < x; i++){
 
 vetor.splice(0, 1); //apaga o primeiro valor (o primeiro valor apos a `posicao 0`)
 console.log(vetor);
+
+vetor.forEach(vetor1=>{console.log(`vetor pelo forEach: ${vetor1}`)}) //fosrEach percorrera todo o vetor e mostrara todos os itens
+vetor.forEach(vetor1=>{console.log(`forEach especifico: ${vetor1[2]}`})
