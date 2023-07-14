@@ -1,8 +1,8 @@
 const input = require('synchro-prompt');
+var vet = [];
+var nome, id, pass, name, a, b;
 
 while(op != 3){
-  var vet = [];
-  var nome, id, pass, name, a, b;
   var op = Number(input(`
 ----SISTEMA DE LOGIN E CADASTRO----
   ------------------------------            --------------------------------------  
@@ -17,15 +17,13 @@ while(op != 3){
       console.log();
       nome = input("Digite o seu nome, por favor: ");
       name = nome.toUpperCase(); //para impedir erros na leitura da string
-      id = Number(input("Digite a sua idade, por favor: "));
-      pass = Number(input("Digite a sua senha: "));  
-      vet = [name, id, pass]; //vetor armazenando os dados do meu usuario
+      id = Number(input("Informe sua idade: "));
+      pass = Number(input("Digite uma senha: "));  
+      vet = [name, id, pass]; //vetor armazenando os dados do meu usuario 
+      console.log(`\nCADASTRO REALIZADO COM SUCESSO!`);
       
-      console.log(`CADASTRO REALIZADO COM SUCESSO!`);
-      break;
-    
-    case 2: //mostrar vetor - dados da pessoa cadastrada
-      
+      break;  
+    case 2: //mostrar vetor - dados da pessoa cadastrada  
       while(a != 0){
         console.log();
         nome = input("Digite o seu nome, por favor: ");
@@ -50,12 +48,11 @@ while(op != 3){
           a = Number(input("Gostaria de tenta novamente? \n0 - Nao \n1 - Sim \nInforme a sua opcao: ")); //para o usuario nao ter que voltar ao menu sempre que errar
         }
       }
+      
       break;
-    
     case 3:
       console.log("\nVOCE SAIU!");
       break;
-    
     default:
       console.log();
       console.log("Opcao nao encontrada. \nTente novamente!");
