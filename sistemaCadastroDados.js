@@ -4,7 +4,7 @@ while(op != 3){
   var vet = [];
   var nome, id, pass, name, a, b;
   var op = Number(input(`
- ----SISTEMA DE LOGIN E CADASTRO---
+----SISTEMA DE LOGIN E CADASTRO----
   ------------------------------            --------------------------------------  
  | 1 - INICIAR NOVO CADASTRO    |          | Seja bem vindo(a)! Escolha uma opcao |
  | 2 - LOGAR NO SISTEMA         |          |       ou aperte  3  para sair!       |
