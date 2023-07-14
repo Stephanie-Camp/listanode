@@ -8,7 +8,7 @@ while(op != 3){
      ------------------------------            --------------------------------------  
     | 1 - INICIAR NOVO CADASTRO    |          | Seja bem vindo(a)! Escolha uma opcao |
     | 2 - LOGAR NO SISTEMA         |          |       ou aperte  3  para sair!       |
-    | 3 - SAIR                     |           --------------------------------------
+    | 3 - SAIR.                    |           --------------------------------------
      ------------------------------
 Digite uma opcao: `));
 
