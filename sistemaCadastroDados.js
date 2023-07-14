@@ -53,7 +53,7 @@ Digite uma opcao: `));
       break;
     
     case 3:
-      console.log("Voce escolheu sair!");
+      console.log("\nVOCE SAIU!");
       break;
     
     default:
