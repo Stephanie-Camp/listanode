@@ -57,5 +57,4 @@ while(op != 3){
       console.log();
       console.log("Opcao nao encontrada. \nTente novamente!");
   }
-
 }
