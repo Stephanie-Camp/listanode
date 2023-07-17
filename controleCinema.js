@@ -2,12 +2,16 @@ const input = require('synchro-prompt');
 var vet = ["X", ["X", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], ["X", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ];
 var x = vet.length;
 var op, a, b;
-var cont = 0;
 
-for (var i = 1; i <= x; i++) {
+for(var i = 1; i < x; i++){
+  var m = vet[i]
 
-  while (cont != "X") {
-
+  for(var y = 1; y < m.length; y++){
+    
+    if(y === 21){
+      break;
+    }
+    
     var op = Number(input(`\n  Seja bem vindo(a)! Veja aqui os assentos disponiveis: 
   [${vet[1][1]}]  [${vet[1][2]}]  [${vet[1][3]}]  [${vet[1][4]}]  [${vet[1][5]}]  [${vet[1][6]}]  [${vet[1][7]}]  [${vet[1][8]}]  [${vet[1][9]}]  [${vet[1][10]}]  ---------  FIRST CLASS
              
@@ -49,19 +53,9 @@ for (var i = 1; i <= x; i++) {
       default:
         console.log("\nOpcao nao disponivel! \nSelecione uma opcao valida, por favor!");
     }//switch
-
-    for (var c = 1; c <= x; c++) {
-
-      if (vet[op][i] === "X") {
-        console.log("Nao temos mais assentos disponiveis! \nTente em outra sessao.");
-        cont = "X";
-      } else {
-        console.log("");
-      }
-
-      return cont;
-    }//for 
-
-  }//while principal
+    
+  }//for secundario
+  
 }//for principal
-
+                      
+console.log("\nInfelizmente todos os assentos ja foram comprados. \nVolte outro dia!");
