@@ -1,7 +1,7 @@
 const input = require('synchro-prompt');
 var vet = ["X", ["X", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], ["X", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ];
 var op, a, b;
-var v = new Array(0);
+var v = [];
 
 for(var i = 1; i < vet.length; i++){
 
