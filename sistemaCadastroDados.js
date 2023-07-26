@@ -1,5 +1,6 @@
 const input = require('synchro-prompt');
-var vet = [];
+var vet = 0;
+var vet = [] 
 var nome, id, pass, name, a, b;
 
 while (op != 3) {
@@ -35,7 +36,8 @@ while (op != 3) {
 
             if (pass === vet[2]) {
               console.log(`${vet[0]} tem ${vet[1]} anos.`);
-
+              b = 0;
+              a = 0;
             } else {
               console.log();
               console.log("SENHA INVALIDA!\n");
