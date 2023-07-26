@@ -37,15 +37,15 @@ while (op != 3) {
         name = nome.toUpperCase(); //evitar error na leitura da string
         
           v.forEach(user1 => {
-          let a = user1.indexOf(nome);
+          let index = user1.indexOf(nome);
     
             if (name === vet[0]) {
           
               while (b != 0) {
                 pass = Number(input("Digite a sua senha, por favor: "));
-                  
+                   
                 v.forEach(user2 => {
-                let b = user2.indexOf(pass);
+                let index1 = user2.indexOf(pass);
                   if (pass === vet[2]) {
                     console.log(`${vet[0]} tem ${vet[1]} anos.`); 
                     b = 0;
