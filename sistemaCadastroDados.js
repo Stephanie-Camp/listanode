@@ -1,7 +1,6 @@
 const input = require('synchro-prompt');
-var vet = 0;
 var v = [];
-var nome, id, pass, name, a, b;
+var name, age, pass, a, b;
 
 while (op != 3) {
   var op = Number(input(`
@@ -13,64 +12,42 @@ while (op != 3) {
   ------------------------------
  Digite uma opcao: `));
 
-  switch (op) {
-    case 1: //captura nome, idade, senha e armazenar no vetor
-      /*for(var i = 0; i < v.length; i++){
-        var elemento = v[vet]
-        for(var cont = 0; cont < vet.length; cont++){ */
-      console.log();
-      nome = input("Digite o seu nome, por favor: ");
-      name = nome.toUpperCase(); //para impedir erros na leitura da string
-      id = Number(input("Informe sua idade: "));
-      pass = Number(input("Digite uma senha: "));
-      vet = [name, id, pass]; //vetor armazenando os dados do meu usuario 
-      console.log(`\nCADASTRO REALIZADO COM SUCESSO!`);
+  switch(op){
+    case 1:
+      name = input(`\nVoce escolheu iniciar um novo cadastro! \nDigite o seu nome: `).toUpperCase();
+      age = Number(input(`Digite a sua idade: `));
+      pass = input(`Defina a sua senha: `);
+      var vet = [name, age, pass];
       v.push(vet);
-      //}}
-      console.log(`nosso vetor: `, v);
+      console.log("\nCADASTRO REALIZADO COM SUCESSO!");
+      console.log(`VETOR: `, v)
       break;
-    case 2: //mostrar vetor - dados da pessoa cadastrada
-     
-        while (a != 0) {
-        console.log();
-        nome = input("Digite o seu nome, por favor: ");
-        name = nome.toUpperCase(); //evitar error na leitura da string
-        
-          v.forEach(user1 => {
-          let index = user1.indexOf(nome);
-    
-            if (name === vet[0]) {
-          
-              while (b != 0) {
-                pass = Number(input("Digite a sua senha, por favor: "));
-                   
-                v.forEach(user2 => {
-                let index1 = user2.indexOf(pass);
-                  if (pass === vet[2]) {
-                    console.log(`${vet[0]} tem ${vet[1]} anos.`); 
-                    b = 0;
-                    a = 0;
-                  } else {
-                    console.log();
-                    console.log("SENHA INVALIDA!\n");
-                    b = Number(input("Gostaria de tenta novamente? \n0 - Nao \n1 - Sim \nInforme a sua opcao: ")); //para o usuario nao ter que voltar todo o processo do incio
-                  }
-                })
-              }
-            } else {
-              console.log();
-              console.log("NOME INVALIDO!\n");
-              a = Number(input("Gostaria de tenta novamente? \n0 - Nao \n1 - Sim \nInforme a sua opcao: ")); //para o usuario nao ter que voltar ao menu sempre que errar
-            }
-          })
+    case 2:
+      name = input(`\nPara logar: \nDigite seu nome: `).toUpperCase();
+      pass = input("Digite a sua senha: ");
+
+      v.forEach(user => {
+       let index = user.indexOf(name);
+      //  
+        if(index != -1){
+          //
+          if(pass === user[2]){
+            console.log(`${name} tem ${age} anos!`);
+          }else{
+            console.log(`Senha incorreta! \nTente novamente.`);
+          }
+          //  
+        }else{
+          console.log(`Nome invalido.`);
         }
-      
+      //
+      })
       break;
     case 3:
-      console.log("\nVOCE SAIU!");
+      console.log(`\nVoce escolheu sair!`);
       break;
     default:
-      console.log();
-      console.log("Opcao nao encontrada. \nTente novamente!");
+      console.log(`Opcao invalida! \nTente novamente.`);      
   }
+  
 }
