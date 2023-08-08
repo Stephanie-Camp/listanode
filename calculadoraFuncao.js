@@ -17,7 +17,7 @@ function div (x , y){
   return `RESULTADO = ${div}`;
 }
 function resto(a, b){
-  let resto = a%b;
+  let resto = a % b;
   return `RESTO DA DIVISAO = ${resto}`;
 }
 function exp(x, y){
