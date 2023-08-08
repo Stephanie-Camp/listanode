@@ -1,11 +1,11 @@
 const input = require('synchro-prompt');
-var vet = [ [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ];
+var vet = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]];
 var a, b;
 var v = [];
 
-for(var i = 1; i < vet.length; i++){
+for (var i = 1; i < vet.length; i++) {
 
-  while(v.length != 20){  
+  while (v.length != 20) {
     var op = Number(input(`\n  Seja bem vindo(a)! Veja aqui os assentos disponiveis: 
   [${vet[0][1]}]  [${vet[0][2]}]  [${vet[0][3]}]  [${vet[0][4]}]  [${vet[0][5]}]  [${vet[0][6]}]  [${vet[0][7]}]  [${vet[0][8]}]  [${vet[0][9]}]  [${vet[0][10]}]   ---------   FIRST CLASS
              
@@ -16,15 +16,15 @@ for(var i = 1; i < vet.length; i++){
   2 - ASSENTO AO FUNDO (NORMAL)
   
   Digite aqui o numero correspondente a fileira que voce prefere se sentar: `));
-    
+
     op = --op;
-    
+
     switch (op) {
       case 0:
         a = Number(input("  Informe o numero do assento que deseja obter: "));
         if (vet[op][a] === "X") {
           console.log("\nDesculpe, esse assento nao se encontra disponivel! \nSelecione outro, por favor.");
-          
+
         } else if (a < 11 && a > 0) {
           console.log("\nASSENTO ADQUIRIDO!");
           v.push(vet[op][a]);
@@ -50,7 +50,7 @@ for(var i = 1; i < vet.length; i++){
       default:
         console.log("\nOpcao nao disponivel! \nSelecione uma opcao valida, por favor!");
     }//switch
-    
+
   }//while
 }//for principal
 

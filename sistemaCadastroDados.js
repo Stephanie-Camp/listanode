@@ -20,27 +20,22 @@ while (op != 3) {
       var vet = [name, age, pass];
       v.push(vet);
       console.log("\nCADASTRO REALIZADO COM SUCESSO!");
-      console.log(`VETOR: `, v)
+      console.log(`VETOR: `, v);
       break;
     case 2:
       name = input(`\nPara logar: \nDigite seu nome: `).toUpperCase();
       pass = input("Digite a sua senha: ");
-
       v.forEach(user => {
-       let index = user.indexOf(name);
-      //  
+        let index = user.indexOf(name);
         if(index != -1){
-          //
           if(pass === user[2]){
             console.log(`${name} tem ${age} anos!`);
           }else{
             console.log(`Senha incorreta! \nTente novamente.`);
-          }
-          //  
+          }  
         }else{
-          console.log(`Nome invalido.`);
+          console.log(`Nome invalido.`);  
         }
-      //
       })
       break;
     case 3:
