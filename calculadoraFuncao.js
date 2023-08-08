@@ -25,7 +25,8 @@ function exp(x, y){
   return `RESULTADO = ${exp}`;
 }
 function raiz(x){
-  return `RESULTADO = ${Math.sqrt(x)}`;
+  let raiz = Math.sqrt(x);
+  return `RESULTADO = ${raiz}`;
 }
 function fat(x){
   var i = x;
@@ -73,11 +74,11 @@ while(op != 0){
       console.log(subt(a, b));
       break;
     case 3:
-      console.log(div(a, b));
-      console.log(resto(a, b));
+      console.log(mult(a, b));
       break;
     case 4:
-      console.log(mult(a, b));
+      console.log(div(a, b));
+      console.log(resto(a, b));
       break;
     case 5:
       console.log(resto(a, b));
