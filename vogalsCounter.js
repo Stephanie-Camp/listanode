@@ -5,13 +5,13 @@ function contaVogais(x){
   for (var i = 0; i < vet.length; i++){
     if(vet[i] === "a"){
       qntd++;
-    }else if(vet[i] == "e"){
+    }else if(vet[i] === "e"){
       qntd++;
-    }else if(vet[i] == "i"){
+    }else if(vet[i] === "i"){
       qntd++;
-    }else if(vet[i] == "o"){
+    }else if(vet[i] === "o"){
       qntd++;
-    }else if(vet[i] == "u"){
+    }else if(vet[i] === "u"){
       qntd++;
     }
   }

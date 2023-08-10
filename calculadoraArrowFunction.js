@@ -4,7 +4,7 @@ let soma = (x, y) => {
   return x + y;
 }
 let subt = (x, y) => {
-  return x - y;
+  return x - y;     
 }
 let mult = (x, y) => {
   return x * y;
