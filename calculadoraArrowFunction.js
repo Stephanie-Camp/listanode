@@ -13,17 +13,17 @@ let div = (x, y) => {
   return x / y;
 }
 let resto = (x, y) => {
-  return x%y;
+  return x % y;
 }
 let exp = (x, y) => {
   return x ** y;
 }
-let raiz = (x)  => { 
-  return Math.sqrt(x);
+let raiz = (x, y)  => { 
+  return x ** (1/y);
 }
 let fat = (x) => {
-  var fat = 0;
-  var i = x;
+  let fat = 0;
+  let i = x;
   if(x === 0 || x === 1){
     fat = 1;
   }else if(x > 1){
@@ -52,10 +52,10 @@ while(op != 0){
  -------------------- 
  OPERACAO A REALIZAR: `));
 
-  if(op > 0 && op < 7){
+  if(op > 0 && op <= 7){
     a = Number(input(`Digite um valor: `));
     b = Number(input(`Digite um valor: `));
-  }if (op >= 7 && op < 9){
+  }else if (op === 8){
     a = Number(input(`Digite um valor: `));
   }
   
@@ -80,7 +80,7 @@ while(op != 0){
       console.log(`Resultado = `, exp(a, b));
       break;
     case 7:
-      console.log(`Resultado = `, raiz(a));
+      console.log(`Resultado = `, raiz(a, b));
       break;
     case 8:
       console.log(`Resultado = `, fat(a));

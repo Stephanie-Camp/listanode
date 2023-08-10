@@ -6,10 +6,10 @@ let mult = function(x, y){ return x * y; }
 let div = function(x, y){ return x / y; }
 let resto = function(x, y){ return x % y; }
 let exp = function(x, y){ return x ** y; }
-let raiz = function(x){ return Math.sqrt(x);}
+let raiz = function(x, y){ return x ** (1/y); }
 let fat = function(x){
-  var fat = 0;
-  var i = x;
+  let fat = 0;
+  let i = x;
   if(x === 0 || x === 1){ fat = 1;
   }else if(x > 1){
     while(i != 1){
@@ -37,10 +37,10 @@ while(op != 0){
  -------------------- 
  OPERACAO A REALIZAR: `));
 
-   if(op > 0 && op < 7){
+   if(op > 0 && op <= 7){
     a = Number(input(`Digite um numero: `));
     b = Number(input(`Digite outro: `));
-  }if (op >= 7 && op < 9){
+  }if (op ===8){
     a = Number(input(`Digite um numero: `));
   }
 
@@ -65,7 +65,7 @@ while(op != 0){
       console.log(`Resultado da potencia: `, exp(a, b));
       break;
     case 7:
-      console.log(`Valor da raiz: `, raiz(a));
+      console.log(`Valor da raiz: `, raiz(a, b));
       break;
     case 8:
       console.log(`Resultado do fatorial: `, fat(a));

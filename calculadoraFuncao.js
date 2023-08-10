@@ -24,13 +24,13 @@ function exp(x, y){
   let exp = x ** y;
   return `RESULTADO = ${exp}`;
 }
-function raiz(x){
-  let raiz = Math.sqrt(x);
+function raiz(x, y){
+  let raiz = x ** (1/y);
   return `RESULTADO = ${raiz}`;
 }
 function fat(x){
-  var i = x;
-  var fat = 0;
+  let i = x;
+  let fat = 0;
   if(x === 0 || x === 1){
     fat = 1;
   }else if(x > 1){
@@ -39,7 +39,7 @@ function fat(x){
       x = fat;
       i--;
     }
-  }else{fat = "Valor invalido. \nTente um numero positivo!";}
+  }else{ fat = "Valor invalido. \nTente um numero positivo!"; }
   return `RESULTADO = ${fat}`;
 }
 
@@ -59,10 +59,10 @@ while(op != 0){
  -------------------- 
  OPERACAO A REALIZAR: `));
 
-  if(op > 0 && op < 7){
+  if(op > 0 && op <= 7){
     a = Number(input(`Digite um numero: `));
     b = Number(input('Digite outro numero: '));
-  }else if (op >= 7 && op < 9){
+  }else if (op === 8){
     a = Number(input(`Digite um numero: `));
   }
   
@@ -87,7 +87,7 @@ while(op != 0){
       console.log(exp(a, b));
       break;
     case 7:
-      console.log(raiz(a));
+      console.log(raiz(a, b));
       break;
     case 8:
       console.log(fat(a));
