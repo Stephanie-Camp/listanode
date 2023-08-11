@@ -2,10 +2,8 @@ const input = require('synchro-prompt');
 
 let palindrome = (word)=>{
     let reverse = word.toReversed();
-    for(var i = 0; i < word.length; i++){
-        if(word[i] === reverse[i]){     //console.log(`Review - `, word[i], reverse[i], i);
-        }else{  return `Oh! This word is not a palindrome.`;  break;  }
-    }
+        if(word.join('') === reverse.join('')){     //console.log(`Review - `, word[i], reverse[i], i);
+        }else{  return `Oh! This word is not a palindrome.`;  }
     return `The word ${word.join('')} is a palindrome!`;
 }
 

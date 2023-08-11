@@ -7,7 +7,7 @@ console.log(`  CALCULADORA
 | c - Multiplicacao
 | d - Divisao
 | e - Exponenciacao
-| f- Resto da divisao `);
+| f - Resto da divisao `);
 var op = input("\nDigite qual operacao voce deseja realizar: ").toLowerCase();
 var num1 = Number(input("\nInforme o primeiro numero: "));
 var num2 = Number(input("Informe o segundo numero: "));
