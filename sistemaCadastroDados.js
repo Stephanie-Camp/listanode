@@ -1,6 +1,6 @@
 const input = require('synchro-prompt');
 var v = [];
-var name, age, pass, a, b;
+var name, age, pass;
 
 while (op != 3) {
   var op = Number(input(`
