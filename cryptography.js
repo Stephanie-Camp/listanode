@@ -7,12 +7,17 @@ const input = require('synchro-prompt');
 let passTable = (info) => { //function responsible for encrypting new's passwords
    info = info.toString().split('');
    //encrypt array, with table of letters/number and yours 'codes'
-   let crypTable = [[['a'], ['Hjip']], [['b'], ['mwXi']], [['c'], ['zhpQ']], [['d'], ['qSom']], [['e'], ['jsDt']], [['f'], ['aErn']],
-   [['g'], ['nulY']], [['h'], ['sBek']], [['i'], ['vaIt']], [['j'], ['bchM']], [['k'], ['gOvt']], [['l'], ['RUrd']],
-   [['m'], ['Kosg']], [['n'], ['ixyE']], [['o'], ['xPaq']], [['p'], ['hLWx']], [['q'], ['jhGy']], [['r'], ['xdcA']],
-   [['s'], ['sDen']], [['t'], ['Uybg']], [['u'], ['hyCk']], [['v'], ['fdgR']], [['w'], ['SDfi']], [['x'], ['njDw']],
-   [['y'], ['cbhZ']], [['z'], ['rPls']], [['0'], ['fnQq9']], [['1'], ['v4eju']], [['2'], ['8wSFE']], [['3'], ['qnJ2w']],
-   [['4'], ['f0avF']], [['5'], ['7dhGN']], [['6'], ['BH4Ui']], [['7'], ['KAD2j']], [['8'], ['dSK3']], [['9'], ['PG5cf']]];
+   let crypTable = [['a', 'Hjip'], ['b', 'mwXi'], ['c', 'zhpQ'], ['d', 'qSom'], ['e', 'jsDt'], ['f', 'aErn'],
+   ['g', 'nulY'], ['h', 'sBek'], ['i', 'vaIt'], ['j', 'bchM'], ['k', 'gOvt'], ['l', 'RUrd'],
+   ['m', 'Kosg'], ['n', 'ixyE'], ['o', 'xPaq'], ['p', 'hLWx'], ['q', 'jhGy'], ['r', 'xdcA'],
+   ['s', 'sDen'], ['t', 'Uybg'], ['u', 'hyCk'], ['v', 'fdgR'], ['w', 'SDfi'], ['x', 'njDw'],
+   ['y', 'cbhZ'], ['z', 'rPls'], ['A', 'pIHjqz'], ['B', 'mMNeOv'], ['C', 'fSomMx'], ['D', 'EjzGtp'],
+   ['E', 'jKAMpt'], ['F', 'anpADJ'], ['G', 'YvaczY'], ['H', 'sSBeak'], ['I', 'aIzHAt'],
+   ['J', 'bMArew'], ['K', 'gOPWvt'], ['L', 'RDNMqd'], ['M', 'yOAMGg'], ['N', 'zqopPE'],
+   ['O', 'xDowIq'], ['P', 'hEvXox'], ['Q', 'jJbcGy'], ['R', 'xLaqmZ'], ['S', 'ynKPQn'],
+   ['T', 'UyBAmo'], ['U', 'hKJHwl'], ['V', 'fXytrR'], ['W', 'SJNnya'], ['X', 'VHGFow'],
+   ['Y', 'AMJywZ'], ['Z', 'PjOWNs'], ['0', 'fnQq9'], ['1', 'v4eju'], ['2', '8wSFE'], ['3', 'qnJ2w'],
+   ['4', 'f0avF'], ['5', '7dhGN'], ['6', 'BH4Ui'], ['7', 'KAD2j'], ['8', 'dSK3'], ['9', 'PG5cf']];
    crypTable.forEach(valueCode => { //console.log(valueCode[0], valueCode[1]) - letra correspondende, codigo correspondente
       valueCode.forEach(letter => {  //console.log(letter[0])
          for (var c = 0; c < info.length; c++) {
@@ -26,7 +31,6 @@ let passTable = (info) => { //function responsible for encrypting new's password
 }
 
 let validation = (passValidate) => { //validation of the password
-   passValidate = passValidate.split('').join('');
    console.log('Current pass anda pass registred', passTable(passValidate) , passTable(userPass))
    if(passTable(passValidate) === passTable(userPass)){ //if(current password === password registered)
       return'login validado';
@@ -35,9 +39,8 @@ let validation = (passValidate) => { //validation of the password
    }
 }
 
-var userPass = input(`Digite uma senha: `); //test
+var userPass = passTable(input(`Digite uma senha: `)); //password paramether
 //var x = userPass.split('') //error 1 -> inserct in the function passTable
-console.log('New pass:', passTable(userPass)); //test password
 
-var pass = input('Digite sua senha: '); //validator of current password
-console.log(validation(pass)); //return a message of aprovation  or  error;
+var pass = validation(input('Digite sua senha: ')); //validator of current password
+console.log(pass) //return a message of aprovation  or  error;

@@ -5,16 +5,21 @@ var name, login, pass;
 let passTable = (info) => { //function responsible for encrypting new's passwords
     info = info.toString().split('');
     //encrypt array, with table of letters/number and yours 'codes'
-    let crypTable = [[['a'], ['Hjip']], [['b'], ['mwXi']], [['c'], ['zhpQ']], [['d'], ['qSom']], [['e'], ['jsDt']], [['f'], ['aErn']],
-    [['g'], ['nulY']], [['h'], ['sBek']], [['i'], ['vaIt']], [['j'], ['bchM']], [['k'], ['gOvt']], [['l'], ['RUrd']],
-    [['m'], ['Kosg']], [['n'], ['ixyE']], [['o'], ['xPaq']], [['p'], ['hLWx']], [['q'], ['jhGy']], [['r'], ['xdcA']],
-    [['s'], ['sDen']], [['t'], ['Uybg']], [['u'], ['hyCk']], [['v'], ['fdgR']], [['w'], ['SDfi']], [['x'], ['njDw']],
-    [['y'], ['cbhZ']], [['z'], ['rPls']], [['0'], ['fnQq9']], [['1'], ['v4eju']], [['2'], ['8wSFE']], [['3'], ['qnJ2w']],
-    [['4'], ['f0avF']], [['5'], ['7dhGN']], [['6'], ['BH4Ui']], [['7'], ['KAD2j']], [['8'], ['dSK3']], [['9'], ['PG5cf']]];
+    let crypTable = [['a', 'Hjip'], ['b', 'mwXi'], ['c', 'zhpQ'], ['d', 'qSom'], ['e', 'jsDt'], ['f', 'aErn'],
+    ['g', 'nulY'], ['h', 'sBek'], ['i', 'vaIt'], ['j', 'bchM'], ['k', 'gOvt'], ['l', 'RUrd'],
+    ['m', 'Kosg'], ['n', 'ixyE'], ['o', 'xPaq'], ['p', 'hLWx'], ['q', 'jhGy'], ['r', 'xdcA'],
+    ['s', 'sDen'], ['t', 'Uybg'], ['u', 'hyCk'], ['v', 'fdgR'], ['w', 'SDfi'], ['x', 'njDw'],
+    ['y', 'cbhZ'], ['z', 'rPls'], ['A', 'pIHjqz'], ['B', 'mMNeOv'], ['C', 'fSomMx'], ['D', 'EjzGtp'],
+    ['E', 'jKAMpt'], ['F', 'anpADJ'], ['G', 'YvaczY'], ['H', 'sSBeak'], ['I', 'aIzHAt'],
+    ['J', 'bMArew'], ['K', 'gOPWvt'], ['L', 'RDNMqd'], ['M', 'yOAMGg'], ['N', 'zqopPE'],
+    ['O', 'xDowIq'], ['P', 'hEvXox'], ['Q', 'jJbcGy'], ['R', 'xLaqmZ'], ['S', 'ynKPQn'],
+    ['T', 'UyBAmo'], ['U', 'hKJHwl'], ['V', 'fXytrR'], ['W', 'SJNnya'], ['X', 'VHGFow'],
+    ['Y', 'AMJywZ'], ['Z', 'PjOWNs'], ['0', 'fnQq9'], ['1', 'v4eju'], ['2', '8wSFE'], ['3', 'qnJ2w'],
+    ['4', 'f0avF'], ['5', '7dhGN'], ['6', 'BH4Ui'], ['7', 'KAD2j'], ['8', 'dSK3'], ['9', 'PG5cf']];
     crypTable.forEach(valueCode => { //console.log(valueCode[0], valueCode[1]) - letra correspondende, codigo correspondente
        valueCode.forEach(letter => {  //console.log(letter[0])
           for (var c = 0; c < info.length; c++) {
-             if (letter[0] === info[c]) {//if(crypTable[value] = pass[value])
+             if (letter[0] === info[c]) { //if(crypTable[value] = pass[value])
                 info.splice(info.indexOf(info[c]), 1, valueCode[1]); //replace value in the pass(INFO)
              }
           }
@@ -22,52 +27,62 @@ let passTable = (info) => { //function responsible for encrypting new's password
     })
     return info.join(''); //return pass encrypted
  }
- 
- let validation = (passValidate) => { //validation of the password
-    passValidate = passValidate.split('').join('');
-    console.log('Current pass anda pass registred', passTable(passValidate) , passTable(pass))
-    if(passTable(passValidate) === passTable(pass)){ //if(current password === password registered)
-       return'login validado';
-    }else{ //if(current password != password registered)
-       return'senha errada';
-    }
+ let validLogin = (userName, userSystem) => { //validation of username login
+    userName = userName.toLowerCase(); //prevent case-sensitive issues
+    let x = userSystem.some(function(user){ //found a correspondent value, loop like forEach
+        let index = user.indexOf(userName);
+        if(index != -1){ //function return a true value if find a correspondent value 
+            return true;    
+        }else{ //false case value doesnt exist
+            return false;   
+        }
+    })
+    return x;
+ }
+ let validPass = (passValidate, userSystem) => { //validPass of the password
+    passValidate = passTable(passValidate); //convert the value for comp
+    let x = userSystem.some(function(user){
+        if(passValidate === user[1]){ //if(current password === password in the system)
+            return true;
+        }else{ //if(current password != password registered)
+        return false;
+        }
+    })
+    return x;
  }
 
 while(op != 0){
     var op = Number(input(`
-----SISTEMA DE LOGIN E CADASTRO----
-  ------------------------------            --------------------------------------  
- | 1 - INICIAR NOVO CADASTRO    |          | Seja bem vindo(a)! Escolha uma opcao |
- | 2 - LOGAR NO SISTEMA         |          |       ou aperte  3  para sair!       |
- | 0 - SAIR.                    |           --------------------------------------
-  ------------------------------
- Digite uma opcao: `));
+ ---REGRISTRATION SYSTEM---
+  ------------------------            ----------------------------------  
+ | 1 - NEW REGISTER       |          |  WELCOME! CHOOSE A OPTION BESIDE |
+ | 2 - LOGIN              |          |      OR INSERT  0  FOR EXIT.     |
+ | 0 - EXIT.              |           ----------------------------------
+  ------------------------
+ Insert your option: `));
 
     switch(op){
         case 1: 
-            name = input('Digite seu nome, por favor: ');
-            age = Number(input('Informe sua idade sua idade: '));
-            login = input('Digite um nome de usuario para que voce possa logar: ').toLowerCase();
-            pass = input('Crie uma senha: ');
-            var userArr = [login, passTable(pass), [name, age]];
+            name = input('\nInsert your name, please: ');
+            age = Number(input('Age: '));
+            login = input('Choose a username for your login: ').toLowerCase();
+            pass = passTable(input('Create a password: '));
+            let userArr = [login, pass, [name, age]];
             users.push(userArr);
-            console.log('CADASTRO REALIZADO COM SUCESSO!');
-            console.log(`Users:`, users, `\nUser: `, userArr);
+            console.log('NEW REGISTRATION COMPLETED!!');
             break;
         case 2:
-            login = input('\nUsuario: ').toLowerCase();
-            users.forEach(user =>{
-                console.log(user[0], user[1])
-                if(login === user[0]){
-                    pass = input('Senha: ');
-                    console.log(validation(pass)); //return a message of aprovation  or  error
-                }
-            })
-        case 0:
-            console.log('\nPrograma encerrado com sucesso! \nVoce saiu.');
+            login = validLogin((input('\nUsername: ')), users); //read a value and search he in the array
+            if(login === true){ //the user insert a correct login
+                let passNow = validPass((input('Password: ')), users); //read the pass and make the validation
+                if(passNow === true){ //the user insert a correct password
+                    console.log('Login validate. \n................Welcome!'); //suscefully login
+                }else{ console.log('Wrong password! Try again.'); } //when the password is invalid
+            }else{ console.log('Login not found!'); } //when the user is invalid         
             break;
-        default:
-            console.log('\nOpcao nao encontrada. Tente novamente!');
+        case 0: console.log('\nYou left. . . . . . . . . . . . .');
+            break;
+        default: console.log('Invalid option. Try again!');
     }
 
 }

@@ -24,7 +24,7 @@ while (op != 3) {
       break;
     case 2:
       name = input(`\nPara logar: \nDigite seu nome: `).toUpperCase();
-      pass = input("Digite a sua senha: ");
+      let pass = input("Digite a sua senha: ");
       v.forEach(user => {
         let index = user.indexOf(name);
         if(index != -1){
