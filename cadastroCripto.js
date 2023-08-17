@@ -16,10 +16,10 @@ let passTable = (info) => { //function responsible for encrypting new's password
     ['T', 'UyBAmo'], ['U', 'hKJHwl'], ['V', 'fXytrR'], ['W', 'SJNnya'], ['X', 'VHGFow'],
     ['Y', 'AMJywZ'], ['Z', 'PjOWNs'], ['0', 'fnQq9'], ['1', 'v4eju'], ['2', '8wSFE'], ['3', 'qnJ2w'],
     ['4', 'f0avF'], ['5', '7dhGN'], ['6', 'BH4Ui'], ['7', 'KAD2j'], ['8', 'dSK3'], ['9', 'PG5cf']];
-    crypTable.forEach(valueCode => { //console.log(valueCode[0], valueCode[1]) - letra correspondende, codigo correspondente
-       valueCode.forEach(letter => {  //console.log(letter[0])
+    crypTable.forEach(valueCode => {
+       valueCode.forEach(letter => {
           for (var c = 0; c < info.length; c++) {
-             if (letter[0] === info[c]) { //if(crypTable[value] = pass[value])
+             if (letter[0] === info[c]) {
                 info.splice(info.indexOf(info[c]), 1, valueCode[1]); //replace value in the pass(INFO)
              }
           }
@@ -77,10 +77,10 @@ while(op != 0){
                 let passNow = validPass((input('Password: ')), users); //read the pass and make the validation
                 if(passNow === true){ //the user insert a correct password
                     console.log('Login validate. \n................Welcome!'); //suscefully login
-                }else{ console.log('Wrong password! Try again.'); } //when the password is invalid
-            }else{ console.log('Login not found!'); } //when the user is invalid         
+                }else{  console.log('Wrong password! Try again.');  } //when the password is invalid
+            }else{  console.log('Login not found!');  } //when the user is invalid         
             break;
-        case 0: console.log('\nYou left. . . . . . . . . . . . .');
+        case 0: console.log('\nYou left. . . . . . . . . . . . . . . . . . . .');
             break;
         default: console.log('Invalid option. Try again!');
     }
