@@ -1,6 +1,6 @@
 const input = require('synchro-prompt');
 var users = [];
-var name, login, pass;
+var name, login, pass, cpf;
 
 let passTable = (info) => { //function responsible for encrypting new's passwords
     info = info.toString().split('');
@@ -63,12 +63,13 @@ while(op != 0){
 
     switch(op){
         case 1: 
-            name = input('\nInsert your name, please: ');
-            age = Number(input('Age: '));
+            name = input('\nInsert your name, please: ').toLowerCase();
+            cpf = passTable(Number(input('Cpf: ')));
             login = input('Choose a username for your login: ').toLowerCase();
             pass = passTable(input('Create a password: '));
-            let userArr = [login, pass, [name, age]];
+            let userArr = [login, pass, [name, cpf]];
             users.push(userArr);
+            console.log(users)
             console.log('NEW REGISTRATION COMPLETED!!');
             break;
         case 2:
