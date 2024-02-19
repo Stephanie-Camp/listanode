@@ -65,11 +65,11 @@ ${(dado[i].info).cpf}
     }
 }
 let mostraNota = (i, aluno) => { //mostra as notas dos alunos e retorna a media
-        let media = 0;
+    let media = 0;
         aluno[i].forEach((nota, i) => {
-        console.log(`Nota ${i + 1}:`, nota);
-        media = Number(media) + Number(nota);
-        i++;
+            console.log(`Nota ${i + 1}:`, nota);
+            media = Number(media) + Number(nota);
+            i++;
     })
     return `Media = ${media}`; //media a calcular
 }
